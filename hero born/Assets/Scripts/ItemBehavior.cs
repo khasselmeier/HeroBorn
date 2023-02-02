@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class ItemBehavior : MonoBehaviour
 {
-    void onCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.name == "player")
         {
             Destroy(this.transform.parent.gameObject);
 
-            Debug.Log("Item collected!");
+            UnityEngine.Debug.Log("Item collected!");
         }
     }
 }

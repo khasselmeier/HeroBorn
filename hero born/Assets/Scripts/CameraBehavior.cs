@@ -8,7 +8,7 @@ public class CameraBehavior : MonoBehaviour
 
     private Transform target;
 
-    void start()
+    void Start()
     {
         target = GameObject.Find("player").transform;
     }
