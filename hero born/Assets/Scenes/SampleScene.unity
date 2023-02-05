@@ -1242,7 +1242,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!136 &1488848227
 CapsuleCollider:
@@ -1883,6 +1883,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1392023694881083082, guid: 0cc2905d183369d478138ac7621ed079, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392023694881083082, guid: 0cc2905d183369d478138ac7621ed079, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392023694881083082, guid: 0cc2905d183369d478138ac7621ed079, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1473342442982281163, guid: 0cc2905d183369d478138ac7621ed079, type: 3}
       propertyPath: m_IsTrigger
       value: 0
