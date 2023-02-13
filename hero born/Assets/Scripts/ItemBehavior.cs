@@ -7,14 +7,13 @@ public class ItemBehavior : MonoBehaviour
 {
     public GameBehavior gameManager;
 
-    void Start()
+    private void Start()
     {
-        gameManager = GameObject.Find("Game Manager") .GetComponent<GameBehavior>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
     }
-
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "player")
+        if (collision.gameObject.name == "player")
         {
             Destroy(this.transform.parent.gameObject);
             UnityEngine.Debug.Log("Item collected!");
