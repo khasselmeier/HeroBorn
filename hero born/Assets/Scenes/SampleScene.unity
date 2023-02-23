@@ -1514,6 +1514,10 @@ PrefabInstance:
       value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5595633346744740702, guid: ce367093a4a8c5444b5a419c39fdf570, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595633346744740702, guid: ce367093a4a8c5444b5a419c39fdf570, type: 3}
       propertyPath: patrolRoute
       value: 
       objectReference: {fileID: 1703919528}
