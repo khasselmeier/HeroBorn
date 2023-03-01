@@ -17,6 +17,7 @@ public class GameBehavior : MonoBehaviour, IManager
     public int maxItems = 4;
     public bool showWinScreen = false;
     public bool showLossScreen = false;
+    public Stack<string> lootStack= new Stack<string>();
 
     private int _itemsCollected = 0;
     public int Items
@@ -69,6 +70,11 @@ public class GameBehavior : MonoBehaviour, IManager
         _state = "Manager initialized..";
         _state.FancyDebug();
         Debug.Log(_state);
+        lootStack.Push("Sword of Doom");
+        lootStack.Push("HP+");
+        lootStack.Push("Golden Key");
+        lootStack.Push("Winged Boot");
+        lootStack.Push("Mythril Bracers");
     }
 
     void OnGUI()
@@ -90,5 +96,13 @@ public class GameBehavior : MonoBehaviour, IManager
                 Utilities.RestartLevel();
             }
         }
+    }
+
+    public void PrintLootReport()
+    {
+        var currentItem = lootStack.Pop();
+        var nextItem = lootStack.Peek();
+        Debug.LogFormat("You got a {0}! You've got a good chance of finding a {1} next!", currentItem, nextItem);
+        Debug.LogFormat("There are {0} random loot items waiting for you!", lootStack.Count);
     }
 }

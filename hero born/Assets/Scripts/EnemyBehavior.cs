@@ -17,18 +17,20 @@ public class EnemyBehavior : MonoBehaviour
     public int EnemyLives
     {
         get { return _lives; }
+
         private set
         {
             _lives = value;
+
             if (_lives <= 0)
             {
                 Destroy(this.gameObject);
-                UnityEngine.Debug.Log("Enemy down.");
+                Debug.Log("Enemy down.");
             }
         }
     }
-    
-    void Start()
+
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("player").transform;
@@ -36,19 +38,11 @@ public class EnemyBehavior : MonoBehaviour
         MoveToNextPatrolLocation();
     }
 
-    void Update()
+    private void Update()
     {
-        if(agent.remainingDistance < 0.2f && !agent.pathPending)
+        if (agent.remainingDistance < 0.2f && !agent.pathPending)
         {
             MoveToNextPatrolLocation();
-        }
-    }
-
-    void InitializePatrolRoute()
-    {
-        foreach(Transform child in patrolRoute)
-        {
-            locations.Add(child);
         }
     }
 
@@ -60,9 +54,17 @@ public class EnemyBehavior : MonoBehaviour
         locationIndex = (locationIndex + 1) % locations.Count;
     }
 
+    void InitializePatrolRoute()
+    {
+        foreach (Transform child in patrolRoute)
+        {
+            locations.Add(child);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if(other.name =="player")
+        if (other.name == "player")
         {
             agent.destination = player.position;
             Debug.Log("player detected - attack!");
@@ -71,7 +73,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if(other.name == "player")
+        if (other.name == "player")
         {
             Debug.Log("player out of range, resume patrol");
         }
@@ -79,10 +81,10 @@ public class EnemyBehavior : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "bullet(Clone)")
+        if (collision.gameObject.name == "bullet(Clone)")
         {
             EnemyLives -= 1;
-            UnityEngine.Debug.Log("Critical hit!");
+            Debug.Log("Critical hit!");
         }
     }
 }
