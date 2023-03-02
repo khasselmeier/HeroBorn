@@ -1152,27 +1152,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324913995}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1347476484 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3918512858783649495, guid: ce367093a4a8c5444b5a419c39fdf570, type: 3}
-  m_PrefabInstance: {fileID: 1698255310}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1347476492
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347476484}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1487886809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,8 +1387,6 @@ MonoBehaviour:
     m_Bits: 8
   bullet: {fileID: 2691653209900029678, guid: 1d703e99c88460547b5c12f9c442ff7c, type: 3}
   bulletSpeed: 100
-  demoKinematicMovement: 0
-  isGrounded: 1
 --- !u!1 &1499316612
 GameObject:
   m_ObjectHideFlags: 0
